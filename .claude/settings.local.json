@@ -3,7 +3,13 @@
     "allow": [
       "Bash(go mod:*)",
       "Bash(go get:*)",
-      "Bash(go build:*)"
+      "Bash(go build:*)",
+      "WebFetch(domain:www.nrc.gov)",
+      "Bash(curl -s \"https://www.nrc.gov/reactors/new-reactors/large-lwr/col/vogtle.html\")",
+      "Bash(curl -s \"https://www.nrc.gov/reactors/new-reactors/large-lwr/col/vogtle\")",
+      "Bash(curl -s https://www.nrc.gov/reactors/new-reactors/large-lwr/col/vogtle)",
+      "Bash(curl -s \"https://www.nrc.gov/reactors/new-reactors/large-lwr/col/river-bend/documents\" -H \"User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36\" --max-time 30)",
+      "Bash(curl -s -L \"https://www.nrc.gov/reactors/new-reactors/large-lwr/col/river-bend/documents\" --connect-timeout 10 --max-time 45 -w \"\\\\nStatus: %{http_code}\\\\n\")"
     ]
   }
 }

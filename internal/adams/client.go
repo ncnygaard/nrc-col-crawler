@@ -229,10 +229,10 @@ func inferCategory(title, docType string) models.DocCategory {
 	t := strings.ToLower(title)
 
 	switch {
-	case strings.Contains(dt, "rai") || strings.Contains(t, "request for additional information"):
-		return models.CategoryRAI
 	case strings.Contains(dt, "rai response") || strings.Contains(t, "response to request"):
 		return models.CategoryRAIResponse
+	case strings.Contains(dt, "rai") || strings.Contains(t, "request for additional information"):
+		return models.CategoryRAI
 	case strings.Contains(dt, "ser") || strings.Contains(t, "safety evaluation report"):
 		return models.CategorySER
 	case strings.Contains(dt, "eis") || strings.Contains(t, "environmental impact statement"):
